@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Button } from 'bulma-react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+import SignUp from './SignUp'
 
 class Home extends Component {
 
@@ -42,7 +47,8 @@ class Home extends Component {
           <br />
           <input type='submit' value='Submit' />
         </form>
-        <Button is-primary>Enter</Button>
+        <Link to='/SignUp'>Sign Up</Link>
+        <Route path="/SignUp" component={SignUp} />
       </div>
     )
   }
