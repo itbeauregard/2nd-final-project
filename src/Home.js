@@ -11,7 +11,8 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: ''
+      username: '',
+      password: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUsername = this.handleUsername.bind(this);
@@ -37,19 +38,21 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <h1>[Monument App]</h1>
-        <h2>Sign In</h2>
-        <form onSubmit={this.handleSubmit}>
-          <input type='text' value={this.state.username} placeholder='username' onChange={this.handleUsername} />
-          <br />
-          <input type='text' value={this.state.password} placeholder='password' onChange={this.handlePassword}/>
-          <br />
-          <input type='submit' value='Submit' />
-        </form>
-        <Link to='/SignUp'>Sign Up</Link>
-        <Route path="/SignUp" component={SignUp} />
-      </div>
+      <Router>
+        <div>
+          <h1>[Monument App]</h1>
+          <h2>Sign In</h2>
+          <form onSubmit={this.handleSubmit}>
+            <input type='text' value={this.state.username} placeholder='username' onChange={this.handleUsername} />
+            <br />
+            <input type='text' value={this.state.password} placeholder='password' onChange={this.handlePassword}/>
+            <br />
+            <input type='submit' value='Submit' />
+          </form>
+          <Link to='/SignUp'>Sign Up</Link>
+          <Route path="/SignUp" component={SignUp} />
+        </div>
+      </Router>
     )
   }
 }
